@@ -145,3 +145,6 @@ glow = !glow;
 // ===============================
 // End Script
 // ===============================
+function showMsg() {
+    alert("Website working perfectly 🚀");
+}
