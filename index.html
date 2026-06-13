@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>सेलोकार ट्रेडर्स एवं कृषि सेवा केंद्र - कुम्हली</title>
     <style>
-        /* मुख्य डिज़ाइन और कलर्स */
+        /* पूरे पेज की डिज़ाइन (Styling) */
         :root {
-            --krishi-green: #1e5c2d;
-            --kirana-gold: #d4a017;
-            --dark-brown: #5c3a21;
-            --light-bg: #f4f9f4;
-            --text-dark: #222;
+            --krishi-green: #2ecc71; /* कृषि के लिए हरा */
+            --kirana-gold: #f39c12; /* किराना के लिए सुनहरा */
+            --light-bg: #ecf0f1; /* बैकग्राउंड का हल्का रंग */
+            --text-dark: #34495e; /* टेक्स्ट का गहरा रंग */
+            --white: #ffffff;
+            --accent: #27ae60; /* गहरा हरा */
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
         }
 
         body {
@@ -27,114 +28,95 @@
             line-height: 1.6;
         }
 
-        /* टॉप सूचना पट्टी */
-        .top-bar {
-            background-color: var(--dark-brown);
-            color: white;
+        /* 📞 टॉप फोन नंबर पट्टी */
+        .top-contact {
+            background-color: #f1c40f; /* सुनहरा पीला */
+            color: #333;
             text-align: center;
-            padding: 8px 10px;
-            font-size: 0.95rem;
+            padding: 10px;
             font-weight: bold;
+            font-size: 1.1rem;
         }
 
-        /* हेडर (मुख्य बैनर) */
+        .top-contact a {
+            color: inherit;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* 🏠 मुख्य हेडर (Welcome Section) */
         header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/main_bg.jpg') center/cover no-repeat, var(--krishi-green);
-            color: white;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/main_banner.jpg') center/cover no-repeat, var(--accent);
+            color: var(--white);
             text-align: center;
-            padding: 60px 20px;
+            padding: 120px 20px;
         }
 
         header h1 {
-            font-size: 2.8rem;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 3rem;
             margin-bottom: 10px;
         }
 
         header p {
             font-size: 1.3rem;
-            color: #ffe082;
-            margin-bottom: 20px;
+            opacity: 0.9;
         }
 
-        .address-badge {
-            background-color: rgba(255, 255, 255, 0.2);
+        .cta-btn {
             display: inline-block;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 1rem;
-            border: 1px solid rgba(255,255,255,0.4);
-        }
-
-        /* बटन स्टाइल */
-        .cta-buttons {
-            margin-top: 25px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            color: white;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: var(--white);
+            color: var(--accent);
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 50px;
             font-weight: bold;
-            margin: 5px;
-            transition: 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: background-color 0.3s;
         }
 
-        .btn-call { background-color: #25d366; }
-        .btn-call:hover { background-color: #128c7e; }
-        .btn-shop1 { background-color: var(--krishi-green); border: 2px solid #fff; }
-        .btn-shop2 { background-color: var(--kirana-gold); color: #000; }
+        .cta-btn:hover {
+            background-color: var(--accent);
+            color: var(--white);
+        }
 
-        /* कंटेनर */
+        /* 📦 सेक्शन स्टाइल */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
-        .section-title {
+        h2.section-title {
             text-align: center;
-            font-size: 2.2rem;
-            color: var(--krishi-green);
-            margin-bottom: 10px;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
             position: relative;
         }
 
-        .section-title::after {
+        h2.section-title::after {
             content: '';
             display: block;
             width: 80px;
             height: 4px;
-            background-color: var(--kirana-gold);
-            margin: 10px auto 0;
+            background-color: var(--accent);
+            margin: 15px auto 0;
             border-radius: 2px;
         }
 
-        .section-desc {
-            text-align: center;
-            color: #666;
-            margin-bottom: 40px;
-            font-size: 1.1rem;
-        }
-
-        /* दुकानों के कार्ड्स (दो भाग) */
-        .shops-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        /* 🌾 कृषि और किराना सेक्शन */
+        .shop-flex {
+            display: flex;
+            flex-wrap: wrap;
             gap: 30px;
             margin-bottom: 50px;
         }
 
         .shop-card {
-            background: white;
+            background-color: var(--white);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-            border-top: 5px solid var(--krishi-green);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            flex: 1 1 500px; /* बराबर चौड़ाई */
             transition: transform 0.3s;
         }
 
@@ -142,213 +124,289 @@
             transform: translateY(-5px);
         }
 
-        .shop-card.kirana {
-            border-top-color: var(--kirana-gold);
-        }
-
         .shop-img {
             width: 100%;
-            height: 220px;
+            height: 250px;
             object-fit: cover;
-            background-color: #ddd;
+            background-color: #eee;
         }
 
-        .shop-info {
-            padding: 25px;
+        .shop-content {
+            padding: 30px;
         }
 
-        .shop-info h3 {
-            font-size: 1.6rem;
+        .shop-content h3 {
+            font-size: 1.8rem;
             margin-bottom: 15px;
-            color: #111;
+            color: #333;
         }
 
-        /* सामानों की सूची */
+        .shop-card.krishi {
+            border-top: 5px solid var(--krishi-green);
+        }
+
+        .shop-card.kirana {
+            border-top: 5px solid var(--kirana-gold);
+        }
+
+        /* 📜 सामानों की लिस्ट (डीटेल के साथ) */
         .product-list {
             list-style: none;
+            margin-top: 15px;
         }
 
         .product-list li {
-            padding: 10px 0;
-            border-bottom: 1px dashed #eee;
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f1f1;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .product-list li::before {
-            content: "✓ ";
-            color: var(--krishi-green);
-            font-weight: bold;
-            margin-right: 5px;
-        }
-
-        .kirana .product-list li::before {
-            color: var(--kirana-gold);
-        }
-
-        .tag {
-            background-color: #e8f5e9;
-            color: var(--krishi-green);
-            padding: 2px 10px;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
-
-        .kirana .tag {
-            background-color: #fffde7;
-            color: #c49000;
-        }
-
-        /* हमारे बारे में / मालिक की जानकारी */
-        .owner-section {
-            background-color: white;
-            border-radius: 15px;
-            padding: 35px;
-            margin-top: 40px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        .product-item {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
-            gap: 30px;
-        }
-
-        .owner-info {
-            flex: 2;
-            min-width: 280px;
-        }
-
-        .owner-info h3 {
-            font-size: 1.8rem;
-            color: var(--dark-brown);
-            margin-bottom: 10px;
-        }
-
-        .owner-details-list {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .owner-details-list li {
-            margin-bottom: 12px;
             font-size: 1.1rem;
         }
 
-        /* फुटर (Footer) */
-        footer {
-            background-color: var(--krishi-green);
-            color: white;
+        .product-item::before {
+            content: "🌾"; /* कृषि के लिए आइकॉन, किराना के लिए बाद में बदलेंगे */
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .shop-card.kirana .product-item::before {
+            content: "🛒"; /* किराना आइकॉन */
+        }
+
+        .product-name {
+            font-weight: bold;
+        }
+
+        .product-details {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-top: 2px;
+        }
+
+        .price-badge {
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .shop-card.kirana .price-badge {
+            background-color: var(--kirana-gold);
+        }
+
+        /* 👨 मालिक की जानकारी */
+        .owner-section {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
         }
 
-        footer p {
-            font-size: 1rem;
-            opacity: 0.9;
+        .owner-section h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
         }
 
-        /* मोबाइल के लिए विशेष सेटिंग */
+        .owner-details {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            background-color: var(--white);
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+
+        .contact-btn:hover {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+
+        /* 📍 पता */
+        .address-badge {
+            background-color: var(--white);
+            color: var(--accent);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-top: 30px;
+            display: inline-block;
+        }
+
+        /* 👣 फुटर */
+        footer {
+            background-color: #2c3e50;
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            margin-top: 50px;
+        }
+
+        /* 📱 मोबाइल के लिए सेटिंग */
         @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            header p { font-size: 1.1rem; }
-            .section-title { font-size: 1.8rem; }
+            header h1 { font-size: 2.2rem; }
+            .shop-flex { flex-direction: column; }
+            .contact-methods { flex-direction: column; align-items: center; }
         }
+
     </style>
 </head>
 <body>
 
-    <!-- टॉप सूचना पट्टी -->
-    <div class="top-bar">
-        🌾 किसान भाईयों और ग्रामीणों के भरोसे की अपनी दुकान! 🛒
+    <!-- 📞 टॉप फोन नंबर पट्टी -->
+    <div class="top-contact">
+        किसान हेल्पलाइन: <a href="tel:9669241098">9669241098</a> | <a href="tel:7999512305">7999512305</a>
     </div>
 
-    <!-- मुख्य हेडर -->
+    <!-- 🏠 हेडर -->
     <header>
-        <h1>सेलोकार ट्रेडर्स एवं कृषि सेवा केंद्र</h1>
-        <p>उचित दाम, असली सामान - अब एक ही छत के नीचे</p>
-        <div class="address-badge">📍 ग्राम+पोस्ट: कुम्हली, तहसील: खैरलांजी, जिला: बालाघाट (481337)</div>
-        
-        <div class="cta-buttons">
-            <a href="tel:9669241098" class="btn btn-call">📞 फोन लगाने के लिए क्लिक करें</a>
-            <a href="#krishi" class="btn btn-shop1">🌾 कृषि दुकान देखें</a>
-            <a href="#kirana" class="btn btn-shop2">🛒 किराना दुकान देखें</a>
-        </div>
+        <h1>सेलोकार ट्रेडर्स</h1>
+        <p>ग्राम कुम्हली के किसान भाईयों और परिवारों के लिए उत्तम सामान</p>
+        <p>हमारा उद्देश्य: आपकी प्रगति और सुविधा</p>
+        <a href="#about" class="cta-btn">हमारे बारे में जानें</a>
     </header>
 
-    <!-- मुख्य कंटेनर -->
+    <!-- 📦 मुख्य कंटेनर -->
     <div class="container">
+
+        <!-- 🌾 कृषि और किराना -->
+        <h2 class="section-title">हम क्या-क्या प्रदान करते हैं?</h2>
         
-        <h2 class="section-title">हमारी दुकानें और सामग्रियां</h2>
-        <p class="section-desc">आपके घर के राशन से लेकर खेतों की सुरक्षा तक, सब कुछ यहाँ उपलब्ध है।</p>
+        <div class="shop-flex">
 
-        <div class="shops-grid">
-            
-            <!-- दुकान 1: कृषि सेवा केंद्र -->
-            <div class="shop-card" id="krishi">
-                <!-- यदि आपके images फोल्डर में photo1.jpg या krishi.jpg है तो यहाँ नाम बदलें -->
-                <img src="images/krishi.jpg" alt="सेलोकार कृषि सेवा केंद्र" class="shop-img" onerror="this.src='https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=600&q=80'">
-                <div class="shop-info">
+            <!-- कृषि सेवा केंद्र कार्ड -->
+            <div class="shop-card krishi">
+                <!-- यदि 'images/krishi_main.jpg' नहीं है, तो इंटरनेट से सुंदर फोटो दिखेगी -->
+                <img src="images/krishi_main.jpg" alt="सेलोकार कृषि सेवा केंद्र" class="shop-img" onerror="this.src='https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'">
+                <div class="shop-content">
                     <h3>🌾 सेलोकार कृषि सेवा केंद्र</h3>
-                    <p style="color: #666; margin-bottom: 15px;">फसलों की बंपर पैदावार और सुरक्षा के लिए उत्तम दवाइयाँ और खाद उपलब्ध हैं।</p>
+                    <p style="color: #666; margin-bottom: 20px;">फसलों की सुरक्षा और अच्छी पैदावार के लिए भरोसेमंद उत्पाद।</p>
                     
                     <ul class="product-list">
-                        <li><span>उत्तम धान बिजाई (उन्नत किस्म के बीज)</span> <span class="tag">बीज</span></li>
-                        <li><span>कीटनाशक दवाइयां (Pesticides)</span> <span class="tag">दवा</span></li>
-                        <li><span>फंगिसाइड (उली नाशक) और टॉनिक</span> <span class="tag">सुरक्षा</span></li>
-                        <li><span>यूरिया, डी.ए.पी. (DAP) खाद</span> <span class="tag">खाद/उर्वरक</span></li>
-                        <li><span>पोटाश और मिक्स खाद</span> <span class="tag">खाद</span></li>
-                        <li><span>फसल वर्धक विटामिन्स</span> <span class="tag">टॉनिक</span></li>
+                        <li>
+                            <div>
+                                <span class="product-name">प्रीमियम धान बीज (1212, 1001)</span>
+                                <p class="product-details">अधिक पैदावार और रोग प्रतिरोधक</p>
+                            </div>
+                            <span class="price-badge">बाजार भाव</span>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="product-name">कोराजन कीटनाशक (Koragen)</span>
+                                <p class="product-details">इल्लियों से संपूर्ण सुरक्षा</p>
+                            </div>
+                            <span class="price-badge">उपलब्ध</span>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="product-name">यूरिया (Urea) खाद</span>
+                                <p class="product-details">सरकारी रेट पर (स्टॉक सीमित)</p>
+                            </div>
+                            <span class="price-badge">स्टॉक में है</span>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="product-name">फसल वर्धक टॉनिक (Tonic)</span>
+                                <p class="product-details">पौधों को दे नई ऊर्जा</p>
+                            </div>
+                            <span class="price-badge">उपलब्ध</span>
+                        </li>
                     </ul>
                 </div>
             </div>
 
-            <!-- दुकान 2: किराना एवं जनरल स्टोर्स -->
-            <div class="shop-card kirana" id="kirana">
-                <img src="images/kirana.jpg" alt="सेलोकार किराना एवं जनरल स्टोर्स" class="shop-img" onerror="this.src='https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=600&q=80'">
-                <div class="shop-info">
-                    <h3>🛒 सेलोकार किराना & जनरल स्टोर्स</h3>
-                    <p style="color: #666; margin-bottom: 15px;">रोजमर्रा के उपयोग का शुद्ध और ताजा राशन सामान हमेशा थोक एवं चिल्लर भाव में उपलब्ध।</p>
+            <!-- किराना एवं जनरल स्टोर्स कार्ड -->
+            <div class="shop-card kirana">
+                <!-- यदि 'images/kirana_main.jpg' नहीं है, तो इंटरनेट से सुंदर फोटो दिखेगी -->
+                <img src="images/kirana_main.jpg" alt="सेलोकार किराना एवं जनरल स्टोर्स" class="shop-img" onerror="this.src='https://images.unsplash.com/photo-1604719312566-8912e9227c6a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'">
+                <div class="shop-content">
+                    <h3>🛒 किराना एवं जनरल स्टोर्स</h3>
+                    <p style="color: #666; margin-bottom: 20px;">शुद्ध, ताजा और विश्वसनीय घरेलू राशन हमेशा उपलब्ध।</p>
                     
                     <ul class="product-list">
-                        <li><span>शुद्ध तेल, दालें, चावल और मसाले</span> <span class="tag">राशन</span></li>
-                        <li><span>चायपत्ती, शक्कर और दैनिक उपयोग की वस्तुएं</span> <span class="tag">रसोई</span></li>
-                        <li><span>साबुन, डिटर्जेंट और क्लीनर सामग्रियां</span> <span class="tag">सफाई</span></li>
-                        <li><span>बच्चों के बिस्कुट, चॉकलेट और नमकीन</span> <span class="tag">स्नैक्स</span></li>
-                        <li><span>कापी-पेन एवं स्कूल स्टेशनरी</span> <span class="tag">जनरल</span></li>
-                        <li><span>घरेलू छोटे बर्तन और प्लास्टिक का सामान</span> <span class="tag">बर्तन</span></li>
+                        <li>
+                            <div>
+                                <span class="product-name">शुद्ध सोयाबीन और सरसों तेल</span>
+                                <p class="product-details">रसोई के लिए उत्तम</p>
+                            </div>
+                            <span class="price-badge">ताजा स्टॉक</span>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="product-name">अनाज, दालें और आटा</span>
+                                <p class="product-details">सबसे शुद्ध क्वालिटी</p>
+                            </div>
+                            <span class="price-badge">थोक भाव</span>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="product-name">बच्चों के लिए बिस्कुट और नमकीन</span>
+                                <p class="product-details">ताजा और क्रिस्पी</p>
+                            </div>
+                            <span class="price-badge">सब उपलब्ध</span>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="product-name">दैनिक जनरल सामान (साबुन, सर्फ)</span>
+                                <p class="product-details">पूरी रेंज उपलब्ध</p>
+                            </div>
+                            <span class="price-badge">उपलब्ध</span>
+                        </li>
                     </ul>
                 </div>
             </div>
-
         </div>
 
-        <!-- दुकान के मालिक और संपर्क की जानकारी -->
-        <div class="owner-section">
-            <div class="owner-info">
-                <h3>👨‍🌾 प्रोप्राइटर की जानकारी</h3>
-                <p style="font-size: 1.2rem; font-weight: bold; color: var(--krishi-green);">राहुल सुभाष सेलोकार (Rahul Subhash Selokar)</p>
-                <p style="color: #555;">हमारा लक्ष्य हमारे क्षेत्र के किसानों और भाईयों को सही दाम पर सबसे बेहतरीन क्वालिटी का सामान देना है।</p>
-                
-                <ul class="owner-details-list">
-                    <li><strong>📍 दुकान का पता:</strong> ग्राम + पोस्ट - कुम्हली, तहसील - खैरलांजी, जिला - बालाघाट (मध्य प्रदेश) - 481337</li>
-                    <li><strong>📞 मोबाइल नंबर 1:</strong> <a href="tel:9669241098" style="color: var(--krishi-green); font-weight: bold;">9669241098</a></li>
-                    <li><strong>📞 मोबाइल नंबर 2:</strong> <a href="tel:7999512305" style="color: var(--krishi-green); font-weight: bold;">7999512305</a></li>
-                </ul>
+        <!-- 👨 मालिक और संपर्क -->
+        <div id="about" class="owner-section">
+            <h3>👨‍🌾 प्रोप्राइटर की जानकारी</h3>
+            <p class="owner-details"><strong>राहुल सुभाष सेलोकार (Rahul Subhash Selokar)</strong><br>हमारा लक्ष्य है कि कुम्हली के किसानों को सही जानकारी और उत्तम उत्पाद मिल सकें।</p>
+            
+            <div class="contact-methods">
+                <a href="tel:9669241098" class="contact-btn">📞 9669241098 पर कॉल करें</a>
+                <a href="tel:7999512305" class="contact-btn">📞 7999512305 पर कॉल करें</a>
+            </div>
 
-                <div style="margin-top: 20px;">
-                    <a href="tel:9669241098" class="btn btn-call" style="margin-left: 0;">📱 अभी कॉल करें</a>
-                </div>
+            <div class="address-badge">
+                📍 ग्राम+पोस्ट: कुम्हली, तहसील: खैरलांजी, जिला: बालाघाट (481337)
             </div>
         </div>
 
     </div>
 
-    <!-- फुटर -->
+    <!-- 👣 फुटर -->
     <footer>
-        <p>© 2026 सेलोकार ट्रेडर्स (selokartrader.online) | सर्वाधिकार सुरक्षित।</p>
-        <p style="font-size: 0.85rem; margin-top: 5px; opacity: 0.7;">Designed for Selokar Shops, Kumhali</p>
+        <p>© 2026 सेलोकार ट्रेडर्स - कुम्हली | सभी अधिकार सुरक्षित</p>
     </footer>
 
 </body>
