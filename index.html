@@ -272,38 +272,189 @@
     .ul-items li { display: flex; gap: .7rem; align-items: flex-start; font-size: .92rem; color: var(--text-mid); }
     .ul-items li::before { content: '✅'; flex-shrink: 0; font-size: .8rem; margin-top: .15rem; }
 
-    /* ────────────────────────────────
-       GALLERY  
-    ──────────────────────────────── */
-    .gallery-sec { background: var(--green-dark); }
-    .gallery-sec .sec-title { color: #d1fae5; }
-    .gallery-sec .sec-desc  { color: #a7f3d0; }
-    .gallery-sec .sec-tag   { background: rgba(255,255,255,.15); color: #d1fae5; }
+    <!-- ═══════════════════════════════════════════════════
+     यह पूरा GALLERY SECTION है — index.html में paste करें
+     ═══════════════════════════════════════════════════ -->
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 260px 260px;
-      gap: 12px; margin-top: 2.5rem;
-    }
-    .g-item {
-      border-radius: 14px; overflow: hidden;
-      position: relative; cursor: pointer;
-    }
-    .g-item img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform .45s;
-    }
-    .g-item:hover img { transform: scale(1.07); }
-    .g-item .g-label {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,.7));
-      color: #fff; padding: .8rem 1rem .6rem;
-      font-size: .85rem; font-weight: 600;
-    }
-    .g-big { grid-column: 1 / 2; grid-row: 1 / 3; }
+<!-- Gallery CSS — <style> tag के अंदर paste करें -->
+<style>
+/* ── GALLERY ── */
+.gallery-sec {
+  background: #14532d;
+  padding: 5rem 1.5rem;
+}
+.gallery-sec .sec-tag {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  color: #d1fae5;
+  font-size: .75rem; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  padding: .28rem .85rem; border-radius: 999px;
+  margin-bottom: .8rem;
+}
+.gallery-sec .sec-title {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: clamp(1.8rem,4vw,2.6rem);
+  color: #d1fae5; line-height: 1.2; margin-bottom: .9rem;
+}
+.gallery-sec .sec-desc {
+  color: #a7f3d0; max-width: 620px;
+  margin: 0 auto; line-height: 1.8;
+}
+.gallery-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
 
+/* ── GRID LAYOUT ── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-rows: 270px 270px;
+  gap: 12px;
+  margin-top: 2.5rem;
+}
+
+.g-item {
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background: #1a5c2e;
+}
+.g-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .45s ease;
+  display: block;
+}
+.g-item:hover img { transform: scale(1.07); }
+
+/* label at bottom */
+.g-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,.72));
+  color: #fff; padding: .9rem 1rem .6rem;
+  font-size: .85rem; font-weight: 600;
+  text-align: left;
+}
+
+/* Big item spans 2 rows */
+.g-big {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+/* Lightbox overlay */
+.lightbox {
+  display: none;
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,.88);
+  align-items: center; justify-content: center;
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+  max-width: 90vw; max-height: 88vh;
+  border-radius: 10px;
+  box-shadow: 0 8px 60px rgba(0,0,0,.7);
+}
+.lb-close {
+  position: absolute; top: 18px; right: 24px;
+  color: #fff; font-size: 2.5rem; cursor: pointer;
+  background: none; border: none; line-height: 1;
+}
+.lb-caption {
+  position: absolute; bottom: 20px;
+  color: #d1fae5; font-size: 1rem; font-weight: 600;
+  background: rgba(0,0,0,.5); padding: .4rem 1.2rem;
+  border-radius: 999px;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .g-big { grid-column: 1 / 3; grid-row: auto; height: 240px; }
+}
+@media(max-width:600px){
+  .gallery-grid { grid-template-columns: 1fr; }
+  .g-big { grid-column: 1; }
+  .gallery-grid .g-item { height: 220px; }
+}
+</style>
+
+<!-- ═══════════════════════════════
+     GALLERY HTML — body में paste करें
+     ═══════════════════════════════ -->
+<section class="gallery-sec" id="gallery">
+  <div class="gallery-inner">
+    <span class="sec-tag">📸 हमारी गैलरी</span>
+    <h2 class="sec-title">दुकान की झलकियाँ</h2>
+    <p class="sec-desc">हमारी दुकान और सामान की असली तस्वीरें</p>
+
+    <div class="gallery-grid">
+
+      <!-- BIG — दुकान के सामने (Snapchat-1556347018.jpg) -->
+      <div class="g-item g-big" onclick="openLB('images/Snapchat-1556347018.jpg','🏪 सेलोकर ट्रेडर्स – हमारी दुकान')">
+        <img src="images/Snapchat-1556347018.jpg" alt="सेलोकर ट्रेडर्स दुकान"/>
+        <div class="g-label">🏪 हमारी दुकान – कुम्हली</div>
+      </div>
+
+      <!-- दुकान की बिल्डिंग (IMG_20260612_234553.jpg) -->
+      <div class="g-item" onclick="openLB('images/IMG_20260612_234553.jpg','🏗️ दुकान की बिल्डिंग')">
+        <img src="images/IMG_20260612_234553.jpg" alt="दुकान की बिल्डिंग"/>
+        <div class="g-label">🏗️ दुकान की बिल्डिंग</div>
+      </div>
+
+      <!-- अंदर का सामान (IMG_20260612_234502.jpg) -->
+      <div class="g-item" onclick="openLB('images/IMG_20260612_234502.jpg','🌾 कृषि सेवा केंद्र')">
+        <img src="images/IMG_20260612_234502.jpg" alt="कृषि सेवा केंद्र"/>
+        <div class="g-label">🌾 कृषि सेवा केंद्र</div>
+      </div>
+
+      <!-- किराना स्टोर (IMG_20200101_165505.jpg) -->
+      <div class="g-item" onclick="openLB('images/IMG_20200101_165505.jpg','🛒 किराना एवं जनरल स्टोर')">
+        <img src="images/IMG_20200101_165505.jpg" alt="किराना स्टोर"/>
+        <div class="g-label">🛒 किराना एवं जनरल स्टोर</div>
+      </div>
+
+      <!-- कृषि सामान banner (IMG-20220604-WA0028.jpg) -->
+      <div class="g-item" onclick="openLB('images/IMG-20220604-WA0028.jpg','🧪 कृषि सामान')">
+        <img src="images/IMG-20220604-WA0028.jpg" alt="कृषि सामान"/>
+        <div class="g-label">🧪 कृषि सामान</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLB()">
+  <button class="lb-close" onclick="closeLB()">✕</button>
+  <img id="lb-img" src="" alt=""/>
+  <div class="lb-caption" id="lb-cap"></div>
+</div>
+
+<!-- Gallery JS -->
+<script>
+function openLB(src, caption) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lb-cap').textContent = caption;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLB() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeLB();
+});
+</script>
+  
     /* ────────────────────────────────
        PRODUCTS GRID
     ──────────────────────────────── */
