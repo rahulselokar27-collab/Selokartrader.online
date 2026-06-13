@@ -1,711 +1,796 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>सेलोकर ट्रेडर्स एवं कृषि सेवा केंद्र | कुम्हली, बालाघाट</title>
-  <meta name="description" content="सेलोकर ट्रेडर्स – किराना एवं जनरल स्टोर | सेलोकर कृषि सेवा केंद्र – धान बीज, खाद, कीटनाशक। कुम्हली, खैरलांजी, बालाघाट (म.प्र.)"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <meta name="description" content="सेलोकर ट्रेडर्स – किराना एवं जनरल स्टोर | सेलोकर कृषि सेवा केंद्र – धान बीज, खाद, कीटनाशक। कुम्हली, खैरलांजी, बालाघाट (म.प्र.)" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700;800&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+
   <style>
-    /* ══ RESET ══ */
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    :root {
-      --green:      #15803d;
-      --green-dark: #14532d;
-      --green-bg:   #f0fdf4;
-      --sona:       #b45309;
-      --sona-light: #fef3c7;
-      --mitti:      #78350f;
-      --white:      #ffffff;
-      --text:       #1c1917;
-      --text-mid:   #57534e;
-      --shadow:     0 8px 32px rgba(0,0,0,.18);
-      --shadow-3d:  0 20px 60px rgba(0,0,0,.25);
-    }
-    body { font-family:'Hind','Nirmala UI',sans-serif; background:var(--white); color:var(--text); overflow-x:hidden; }
-
-    /* ══ TOP STRIP ══ */
-    .top-strip {
-      background: linear-gradient(90deg, var(--sona), #ca8a04, var(--sona));
-      background-size: 200% auto;
-      animation: shimmer 3s linear infinite;
-      color:#1c1917; text-align:center; padding:.55rem 1rem;
-      font-size:.88rem; font-weight:700;
-    }
-    @keyframes shimmer { 0%{background-position:0%} 100%{background-position:200%} }
-    .top-strip a { color:#1c1917; text-decoration:none; }
-
-    /* ══ NAVBAR ══ */
-    header {
-      position:sticky; top:0; z-index:999;
-      background: rgba(20,83,45,0.97);
-      backdrop-filter: blur(12px);
-      display:flex; align-items:center; justify-content:space-between;
-      padding:.8rem 2rem;
-      box-shadow: 0 4px 24px rgba(0,0,0,.4), 0 1px 0 rgba(134,239,172,.2);
-    }
-    .logo { display:flex; align-items:center; gap:.5rem; font-family:'Tiro Devanagari Hindi',serif; font-size:1.15rem; color:#d1fae5; line-height:1.25; text-decoration:none; }
-    .logo .leaf { font-size:1.6rem; }
-    nav { display:flex; gap:1.4rem; align-items:center; }
-    nav a { text-decoration:none; color:#bbf7d0; font-weight:600; font-size:.88rem; padding:.3rem .5rem; border-radius:6px; transition:all .2s; }
-    nav a:hover { color:#fef9c3; background:rgba(255,255,255,.08); }
-    .nav-call { background:var(--sona)!important; color:#fff!important; padding:.4rem 1.1rem!important; border-radius:999px!important; font-weight:700!important; box-shadow:0 2px 12px rgba(180,83,9,.5); }
-    .nav-call:hover { transform:translateY(-1px); box-shadow:0 4px 18px rgba(180,83,9,.7)!important; }
-    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
-    .hamburger span { width:26px; height:3px; background:#d1fae5; border-radius:2px; transition:.3s; }
-
-    /* ══ HERO ══ */
-    .hero {
-      position:relative; min-height:95vh;
-      display:flex; align-items:center; justify-content:center;
-      text-align:center; overflow:hidden;
-    }
-    .hero-bg {
-      position:absolute; inset:0;
-      background:url('images/Snapchat-1556347018.jpg') center/cover no-repeat;
-    }
-    .hero-bg::after {
-      content:''; position:absolute; inset:0;
-      background:linear-gradient(160deg, rgba(5,46,22,.88) 0%, rgba(20,83,45,.80) 55%, rgba(120,53,15,.60) 100%);
-    }
-    .hero-inner { position:relative; z-index:2; padding:2rem 1.5rem; max-width:850px; }
-
-    .hero-badge {
-      display:inline-block;
-      background:linear-gradient(135deg, var(--sona), #ca8a04);
-      color:#fff; font-size:.8rem; font-weight:700; letter-spacing:.12em;
-      padding:.4rem 1.3rem; border-radius:999px; text-transform:uppercase;
-      margin-bottom:1.8rem;
-      box-shadow: 0 4px 20px rgba(180,83,9,.6), 0 0 0 3px rgba(202,138,4,.25);
-      animation: glow 2.2s ease-in-out infinite;
-    }
-    @keyframes glow {
-      0%,100%{box-shadow:0 4px 20px rgba(180,83,9,.6),0 0 0 3px rgba(202,138,4,.25)}
-      50%{box-shadow:0 4px 40px rgba(180,83,9,.95),0 0 0 6px rgba(202,138,4,.4)}
+    :root{
+      --bg1:#07160b;
+      --bg2:#0e2414;
+      --card:rgba(255,255,255,.08);
+      --card2:rgba(255,255,255,.13);
+      --text:#f7fff8;
+      --muted:#cfe7d6;
+      --green:#22c55e;
+      --green-dark:#15803d;
+      --gold:#f59e0b;
+      --gold-dark:#b45309;
+      --line:rgba(255,255,255,.12);
+      --shadow:0 18px 50px rgba(0,0,0,.35);
+      --radius:22px;
     }
 
-    .hero h1 {
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Hind',sans-serif;
+      color:var(--text);
+      overflow-x:hidden;
+      background:
+        radial-gradient(circle at top left, rgba(34,197,94,.22), transparent 26%),
+        radial-gradient(circle at top right, rgba(245,158,11,.20), transparent 24%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+      min-height:100vh;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size:72px 72px;
+      opacity:.18;
+      z-index:-1;
+    }
+
+    img{max-width:100%;display:block;height:auto}
+    a{text-decoration:none;color:inherit}
+    .inner{max-width:1200px;margin:0 auto}
+    .sec{padding:5rem 1.1rem}
+    .center{text-align:center;margin-bottom:2rem}
+    .sec-title{
       font-family:'Tiro Devanagari Hindi',serif;
-      font-size:clamp(2.4rem,6.5vw,4.5rem);
-      color:#fff; line-height:1.15;
-      text-shadow:0 4px 30px rgba(0,0,0,.6), 0 0 80px rgba(22,163,74,.3);
+      font-size:clamp(1.8rem,4vw,3rem);
+      line-height:1.12;
+      margin-bottom:.7rem;
+      color:#f8fff9;
+    }
+    .sec-desc{max-width:760px;margin:0 auto;color:var(--muted);line-height:1.8}
+    .sec-tag{
+      display:inline-block;
+      margin-bottom:.7rem;
+      padding:.3rem .8rem;
+      border-radius:999px;
+      font-size:.76rem;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .tg-green{background:rgba(34,197,94,.14);color:#86efac;border:1px solid rgba(34,197,94,.25)}
+    .tg-gold{background:rgba(245,158,11,.14);color:#fde68a;border:1px solid rgba(245,158,11,.25)}
+
+    .top-strip{
+      background:linear-gradient(90deg, var(--gold-dark), var(--gold), #facc15);
+      color:#231300;
+      text-align:center;
+      padding:.65rem 1rem;
+      font-weight:800;
+      position:relative;
+      z-index:20;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(18px);
+      background:rgba(7,22,11,.78);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:.9rem 1.1rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:.8rem;
+      font-family:'Tiro Devanagari Hindi',serif;
+      font-size:1.05rem;
+      line-height:1.15;
+      color:#dcfce7;
+    }
+
+    .logo-box{
+      width:48px;height:48px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(145deg, rgba(34,197,94,.25), rgba(245,158,11,.20));
+      border:1px solid rgba(255,255,255,.16);
+      box-shadow:var(--shadow);
+      transform:perspective(700px) rotateY(-10deg);
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:1.15rem;
+    }
+    nav a{
+      color:#d1fae5;
+      font-weight:600;
+      font-size:.95rem;
+      transition:.22s ease;
+      padding:.35rem .15rem;
+    }
+    nav a:hover{color:#fde68a}
+    .nav-call{
+      background:linear-gradient(135deg, var(--gold), #facc15);
+      color:#231300 !important;
+      padding:.55rem 1rem;
+      border-radius:999px;
+      font-weight:800 !important;
+    }
+
+    .hamburger{
+      display:none;
+      background:none;
+      border:none;
+      cursor:pointer;
+      flex-direction:column;
+      gap:5px;
+      padding:.25rem;
+    }
+    .hamburger span{
+      width:26px;height:3px;border-radius:999px;background:#d1fae5
+    }
+
+    .hero{
+      position:relative;
+      min-height:92vh;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      padding:4rem 1.1rem 3rem;
+    }
+
+    .hero-bg{
+      position:absolute;inset:0;
+      background:
+        linear-gradient(140deg, rgba(7,22,11,.80), rgba(14,36,20,.68)),
+        url('images/shop-front.jpg') center/cover no-repeat;
+      transform:scale(1.06);
+      animation:zoomBg 18s ease-in-out infinite alternate;
+    }
+    @keyframes zoomBg{from{transform:scale(1.06)}to{transform:scale(1.15)}}
+
+    .orb{
+      position:absolute;border-radius:50%;filter:blur(10px);opacity:.45;animation:float 8s ease-in-out infinite
+    }
+    .orb1{width:180px;height:180px;background:rgba(34,197,94,.32);left:-40px;top:14%}
+    .orb2{width:240px;height:240px;background:rgba(245,158,11,.24);right:-70px;bottom:8%;animation-delay:-2s}
+    .orb3{width:120px;height:120px;background:rgba(255,255,255,.12);left:18%;bottom:12%;animation-delay:-4s}
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-18px)}
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:2;
+      width:min(1200px,100%);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:1.3rem;
+      align-items:center;
+    }
+
+    .hero-copy,.hero-side-card{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(16px);
+      border-radius:var(--radius);
+    }
+
+    .hero-copy{
+      padding:2rem;
+      transform:perspective(1200px) rotateY(0deg);
+      animation:cardIn 1.1s ease both;
+    }
+    @keyframes cardIn{
+      from{opacity:0;transform:translateY(18px) perspective(1200px) rotateY(-10deg)}
+      to{opacity:1;transform:translateY(0) perspective(1200px) rotateY(0)}
+    }
+
+    .hero-badge{
+      display:inline-block;
+      padding:.35rem .9rem;
+      border-radius:999px;
+      background:rgba(245,158,11,.16);
+      border:1px solid rgba(245,158,11,.30);
+      color:#fde68a;
+      font-size:.78rem;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
       margin-bottom:1rem;
     }
-    .hero h1 em { color:#86efac; font-style:normal; }
-    .hero-sub { font-size:clamp(1rem,2.5vw,1.3rem); color:#d1fae5; margin-bottom:2rem; line-height:1.8; }
-    .hero-tags { display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; margin-bottom:2.8rem; }
-    .htag {
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.22);
-      color:#d1fae5; font-size:.82rem;
-      padding:.4rem 1rem; border-radius:999px;
-      backdrop-filter:blur(4px);
-      transition:all .3s;
-    }
-    .htag:hover { background:rgba(255,255,255,.2); transform:translateY(-2px); }
-    .hero-btns { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
 
-    .btn-sona {
-      background:linear-gradient(135deg,var(--sona),#ca8a04); color:#fff;
-      font-weight:700; font-size:1rem; padding:.9rem 2.2rem; border-radius:10px;
-      text-decoration:none; transition:.25s;
-      box-shadow:0 6px 20px rgba(180,83,9,.5), 0 2px 0 rgba(255,255,255,.1) inset;
-    }
-    .btn-sona:hover { transform:translateY(-3px); box-shadow:0 10px 30px rgba(180,83,9,.7); }
-    .btn-green {
-      background:linear-gradient(135deg,var(--green),#166534); color:#fff;
-      font-weight:700; font-size:1rem; padding:.9rem 2.2rem; border-radius:10px;
-      text-decoration:none; transition:.25s;
-      box-shadow:0 6px 20px rgba(21,128,61,.5);
-    }
-    .btn-green:hover { transform:translateY(-3px); box-shadow:0 10px 30px rgba(21,128,61,.7); }
-    .btn-outline {
-      background:rgba(255,255,255,.08); color:#d1fae5;
-      font-weight:600; font-size:1rem; padding:.88rem 2.2rem; border-radius:10px;
-      text-decoration:none; border:2px solid rgba(209,250,229,.35);
-      transition:.25s; backdrop-filter:blur(4px);
-    }
-    .btn-outline:hover { border-color:#86efac; background:rgba(209,250,229,.12); transform:translateY(-3px); }
-
-    /* ══ SCROLL INDICATOR ══ */
-    .scroll-down {
-      position:absolute; bottom:2rem; left:50%; transform:translateX(-50%);
-      z-index:2; color:#86efac; font-size:.8rem; text-align:center;
-      animation:bounce-slow 2s ease-in-out infinite;
-    }
-    .scroll-down span { display:block; font-size:1.6rem; }
-    @keyframes bounce-slow { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
-
-    /* ══ WAVE ══ */
-    .wave svg { display:block; width:100%; }
-
-    /* ══ SECTION BASE ══ */
-    .sec { padding:5rem 1.5rem; }
-    .sec-inner { max-width:1100px; margin:0 auto; }
-    .sec-center { text-align:center; }
-    .sec-center .sec-desc { margin:0 auto; }
-    .sec-tag {
-      display:inline-block; font-size:.75rem; font-weight:700; letter-spacing:.12em;
-      text-transform:uppercase; padding:.28rem .9rem; border-radius:999px; margin-bottom:.8rem;
-    }
-    .tg-green { background:#bbf7d0; color:var(--green-dark); }
-    .tg-gold  { background:var(--sona-light); color:var(--mitti); }
-    .sec-title { font-family:'Tiro Devanagari Hindi',serif; font-size:clamp(1.8rem,4vw,2.6rem); line-height:1.2; margin-bottom:.9rem; color:var(--text); }
-    .sec-desc { color:var(--text-mid); line-height:1.8; max-width:620px; }
-
-    /* ══ STATS BAR ══ */
-    .stats-bar {
-      background:linear-gradient(135deg,var(--green-dark),#155e2f);
-      padding:2rem 1.5rem;
-    }
-    .stats-inner {
-      max-width:900px; margin:0 auto;
-      display:grid; grid-template-columns:repeat(4,1fr); gap:1rem;
-      text-align:center;
-    }
-    .stat-item { color:#d1fae5; }
-    .stat-num {
+    .hero h1{
       font-family:'Tiro Devanagari Hindi',serif;
-      font-size:2.2rem; font-weight:700; color:#86efac;
-      display:block; line-height:1;
+      font-size:clamp(2.25rem,5vw,4.5rem);
+      line-height:1.06;
+      margin-bottom:1rem;
     }
-    .stat-label { font-size:.82rem; color:#a7f3d0; margin-top:.3rem; }
+    .hero h1 em{
+      color:#86efac;
+      font-style:normal;
+      text-shadow:0 0 24px rgba(34,197,94,.25);
+    }
 
-    /* ══ OWNER SECTION ══ */
-    .owner-sec { background:var(--green-bg); }
-    .owner-flex { display:flex; gap:3rem; align-items:center; flex-wrap:wrap; }
-    .owner-img-wrap {
-      flex-shrink:0; width:270px; height:310px;
-      border-radius:24px; overflow:hidden;
-      border:5px solid var(--sona);
-      position:relative;
-      /* 3D effect */
-      box-shadow: 0 20px 60px rgba(0,0,0,.25), 8px 8px 0 var(--sona), -4px -4px 0 var(--green-dark);
-      transform:rotate(-1.5deg);
-      transition:transform .4s;
+    .hero p{
+      color:var(--muted);
+      font-size:1.05rem;
+      line-height:1.8;
+      margin-bottom:1.2rem;
     }
-    .owner-img-wrap:hover { transform:rotate(0deg) scale(1.02); }
-    .owner-img-wrap img { width:100%; height:100%; object-fit:cover; object-position:top center; }
-    .owner-text { flex:1; min-width:260px; }
-    .owner-text h2 { font-family:'Tiro Devanagari Hindi',serif; font-size:2rem; color:var(--green-dark); margin-bottom:.4rem; }
-    .owner-text .post { color:var(--sona); font-weight:700; margin-bottom:1rem; font-size:1rem; }
-    .owner-text p { color:var(--text-mid); line-height:1.9; font-size:1rem; }
-    .owner-quote {
-      background:linear-gradient(135deg,var(--green-dark),#155e2f);
-      color:#d1fae5; border-radius:14px; padding:1.4rem 1.6rem;
-      margin-top:1.6rem; font-size:1.05rem; line-height:1.8;
-      border-left:5px solid var(--sona);
-      font-family:'Tiro Devanagari Hindi',serif;
-      box-shadow:var(--shadow);
-      position:relative;
-    }
-    .owner-quote::before { content:'"'; position:absolute; top:-.5rem; left:1rem; font-size:4rem; color:rgba(134,239,172,.2); font-family:serif; line-height:1; }
 
-    /* ══ SHOP CARDS – 3D ══ */
-    .shops-sec { background:var(--white); }
-    .shops-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2.5rem; margin-top:3rem; }
-    .shop-card {
-      border-radius:22px; overflow:hidden;
-      /* 3D card effect */
-      box-shadow: 0 10px 40px rgba(0,0,0,.12), 0 2px 0 rgba(255,255,255,.8) inset;
-      transition:transform .35s cubic-bezier(.34,1.56,.64,1), box-shadow .35s;
-      transform:perspective(800px) rotateY(0deg);
+    .hero-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.62rem;
+      margin-bottom:1.5rem;
     }
-    .shop-card:hover {
-      transform:perspective(800px) rotateY(-4deg) translateY(-8px);
-      box-shadow:0 24px 60px rgba(0,0,0,.18), 8px 8px 0 rgba(21,128,61,.12);
+    .tag{
+      padding:.45rem .85rem;
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      color:#effdf2;
+      font-size:.86rem;
     }
-    .sh-mitti:hover { transform:perspective(800px) rotateY(4deg) translateY(-8px); box-shadow:0 24px 60px rgba(0,0,0,.18), -8px 8px 0 rgba(180,83,9,.12); }
-    .shop-head { padding:2rem; display:flex; gap:1rem; align-items:flex-start; }
-    .shop-icon { font-size:3.2rem; line-height:1; filter:drop-shadow(0 4px 8px rgba(0,0,0,.3)); }
-    .shop-head h3 { font-family:'Tiro Devanagari Hindi',serif; font-size:1.3rem; color:#fff; line-height:1.3; }
-    .shop-head p  { font-size:.82rem; color:rgba(255,255,255,.8); margin-top:.3rem; }
-    .sh-green .shop-head { background:linear-gradient(135deg,#052e16,#15803d); }
-    .sh-mitti .shop-head { background:linear-gradient(135deg,#3c1a04,#b45309); }
-    .shop-body { padding:1.6rem 1.8rem; background:var(--white); }
-    .ul-items { list-style:none; display:flex; flex-direction:column; gap:.6rem; }
-    .ul-items li { display:flex; gap:.7rem; align-items:flex-start; font-size:.92rem; color:var(--text-mid); }
-    .ul-items li::before { content:'✅'; flex-shrink:0; font-size:.8rem; margin-top:.15rem; }
 
-    /* ══ GALLERY – 3D ══ */
-    .gallery-sec { background:linear-gradient(160deg,#052e16 0%,#14532d 100%); padding:5rem 1.5rem; }
-    .gallery-inner { max-width:1100px; margin:0 auto; text-align:center; }
-    .gallery-sec .sec-tag { background:rgba(255,255,255,.12); color:#d1fae5; }
-    .gallery-sec .sec-title { color:#d1fae5; }
-    .gallery-sec .sec-desc  { color:#a7f3d0; margin:0 auto; }
+    .hero-btns{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.8rem;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.45rem;
+      padding:.92rem 1.2rem;
+      border-radius:14px;
+      font-weight:800;
+      transition:.25s ease;
+    }
+    .btn:hover{transform:translateY(-3px)}
+    .btn-green{background:linear-gradient(135deg, var(--green), var(--green-dark));color:#fff}
+    .btn-gold{background:linear-gradient(135deg, var(--gold), #f59e0b);color:#231300}
+    .btn-outline{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.04);color:#effdf2}
 
-    .gallery-grid {
+    .hero-side{
       display:grid;
-      grid-template-columns:1.5fr 1fr 1fr;
-      grid-template-rows:265px 265px;
-      gap:14px; margin-top:2.8rem;
+      gap:1rem;
     }
-    .g-item {
-      border-radius:16px; overflow:hidden;
-      position:relative; cursor:pointer;
-      background:#1a5c2e;
-      /* 3D lift effect */
-      box-shadow:0 8px 24px rgba(0,0,0,.35), 0 2px 0 rgba(255,255,255,.06) inset;
-      transition:transform .4s cubic-bezier(.34,1.4,.64,1), box-shadow .4s;
+    .hero-side-card{
+      min-height:155px;
+      padding:1.2rem;
+      transform:perspective(1000px) rotateX(5deg);
     }
-    .g-item:hover {
-      transform:translateY(-10px) scale(1.02);
-      box-shadow:0 24px 50px rgba(0,0,0,.5), 0 2px 0 rgba(255,255,255,.1) inset;
+    .hero-side-card h3{
+      font-family:'Tiro Devanagari Hindi',serif;
+      font-size:1.35rem;
+      margin-bottom:.45rem;
+      color:#dcfce7;
     }
-    .g-item img { width:100%; height:100%; object-fit:cover; transition:transform .5s; display:block; }
-    .g-item:hover img { transform:scale(1.08); }
-    .g-label {
-      position:absolute; bottom:0; left:0; right:0;
-      background:linear-gradient(transparent,rgba(0,0,0,.78));
-      color:#fff; padding:1rem 1rem .7rem;
-      font-size:.85rem; font-weight:600; text-align:left;
-    }
-    .g-big { grid-column:1/2; grid-row:1/3; }
+    .hero-side-card p{color:#d1fae5;line-height:1.7}
 
-    /* Lightbox */
-    .lightbox { display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,.92); align-items:center; justify-content:center; }
-    .lightbox.open { display:flex; }
-    .lightbox img { max-width:90vw; max-height:86vh; border-radius:12px; box-shadow:0 8px 60px rgba(0,0,0,.8); }
-    .lb-close { position:absolute; top:18px; right:24px; color:#fff; font-size:2.5rem; cursor:pointer; background:none; border:none; line-height:1; }
-    .lb-caption { position:absolute; bottom:20px; color:#d1fae5; font-size:1rem; font-weight:600; background:rgba(0,0,0,.55); padding:.4rem 1.2rem; border-radius:999px; }
+    .glass-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.1rem;
+      margin-top:2rem;
+    }
 
-    /* ══ PRODUCTS ══ */
-    .products-sec { background:var(--green-bg); }
-    .prod-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:1.2rem; margin-top:2rem; }
-    .prod-card {
-      background:var(--white); border-radius:16px;
-      padding:1.5rem 1rem; text-align:center;
-      border:2px solid transparent;
-      /* 3D card */
-      box-shadow:0 4px 16px rgba(0,0,0,.08), 0 1px 0 rgba(255,255,255,.9) inset;
-      transition:transform .3s cubic-bezier(.34,1.4,.64,1), box-shadow .3s, border-color .3s;
+    .glass-card{
+      padding:1.5rem;
+      border-radius:20px;
+      background:linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:var(--shadow);
+      transition:.28s ease;
+      transform-style:preserve-3d;
     }
-    .prod-card:hover {
-      transform:translateY(-6px) scale(1.03);
-      box-shadow:0 16px 32px rgba(0,0,0,.14);
-      border-color:#bbf7d0;
+    .glass-card:hover{
+      transform:translateY(-8px) perspective(1100px) rotateX(6deg) rotateY(-4deg);
     }
-    .prod-card .pi { font-size:2.4rem; margin-bottom:.6rem; filter:drop-shadow(0 2px 4px rgba(0,0,0,.15)); }
-    .prod-card h4 { font-size:.95rem; font-weight:700; color:var(--text); }
-    .prod-card p  { font-size:.74rem; color:var(--text-mid); margin-top:.3rem; line-height:1.5; }
-    .pbadge { display:inline-block; font-size:.68rem; font-weight:700; padding:.2rem .6rem; border-radius:999px; margin-top:.5rem; }
-    .pb-g { background:#bbf7d0; color:var(--green-dark); }
-    .pb-s { background:var(--sona-light); color:var(--mitti); }
+    .glass-card h3{
+      font-family:'Tiro Devanagari Hindi',serif;
+      font-size:1.34rem;
+      margin-bottom:.6rem;
+      color:#dcfce7;
+    }
+    .glass-card p,.glass-card li{color:var(--muted);line-height:1.8}
+    .list{list-style:none;display:grid;gap:.55rem;margin-top:.9rem}
+    .list li::before{content:"✅ ";color:#86efac}
 
-    /* ══ BANNER ══ */
-    .banner {
-      background:linear-gradient(135deg,var(--green),#166534);
-      color:#fff; text-align:center; padding:4rem 1.5rem;
-      position:relative; overflow:hidden;
+    .gallery{
+      background:rgba(255,255,255,.03);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
     }
-    .banner::before {
-      content:'🌾 🌿 🌾 🌿 🌾 🌿 🌾 🌿 🌾 🌿 🌾 🌿 🌾 🌿 🌾 🌿 🌾 🌿 🌾 🌿';
-      position:absolute; top:.8rem; left:0; width:200%;
-      font-size:1.2rem; opacity:.15; letter-spacing:.4rem; white-space:nowrap;
-      animation:ticker 20s linear infinite;
-    }
-    @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-    .banner p { font-family:'Tiro Devanagari Hindi',serif; font-size:clamp(1.3rem,3.5vw,2.1rem); position:relative; z-index:1; }
-    .banner p em { color:#d1fae5; font-style:normal; }
 
-    /* ══ TRUST ══ */
-    .trust-sec { background:var(--sona-light); }
-    .trust-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.5rem; margin-top:2.5rem; }
-    .trust-card {
-      background:var(--white); border-radius:16px; padding:2rem 1.2rem; text-align:center;
-      box-shadow:0 6px 24px rgba(0,0,0,.08), 0 1px 0 rgba(255,255,255,.9) inset;
-      transition:transform .3s cubic-bezier(.34,1.4,.64,1), box-shadow .3s;
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:1.4fr 1fr 1fr;
+      grid-template-rows:260px 260px;
+      gap:12px;
+      margin-top:2rem;
     }
-    .trust-card:hover { transform:translateY(-6px); box-shadow:0 16px 36px rgba(0,0,0,.13); }
-    .trust-card .ti { font-size:2.8rem; margin-bottom:.6rem; }
-    .trust-card h4 { font-weight:700; color:var(--mitti); font-size:1rem; }
-    .trust-card p  { font-size:.82rem; color:var(--text-mid); margin-top:.3rem; line-height:1.6; }
+    .g-item{
+      position:relative;
+      overflow:hidden;
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,.08);
+      background:#0f2717;
+    }
+    .g-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .55s ease;
+    }
+    .g-item:hover img{transform:scale(1.08)}
+    .g-big{grid-row:1/3}
+    .g-label{
+      position:absolute;left:0;right:0;bottom:0;
+      padding:1rem;
+      background:linear-gradient(transparent, rgba(0,0,0,.78));
+      font-weight:700;
+    }
 
-    /* ══ CONTACT ══ */
-    .contact-sec { background:var(--white); }
-    .contact-flex { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
-    .contact-card {
-      background:linear-gradient(145deg,var(--green-dark),#155e2f);
-      border-radius:22px; padding:2.5rem; color:#d1fae5;
-      box-shadow:var(--shadow-3d);
+    .prod-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:1rem;
+      margin-top:2rem;
     }
-    .contact-card h3 { font-family:'Tiro Devanagari Hindi',serif; font-size:1.4rem; color:#86efac; margin-bottom:1.5rem; }
-    .crow { display:flex; gap:1rem; margin-bottom:1.2rem; align-items:flex-start; }
-    .crow .ci { font-size:1.5rem; flex-shrink:0; }
-    .crow p { font-size:.93rem; line-height:1.7; }
-    .crow a { color:#86efac; text-decoration:none; font-weight:700; }
-    .crow a:hover { text-decoration:underline; }
-    .c-divider { border:none; border-top:1px solid rgba(134,239,172,.2); margin:1rem 0; }
-    .map-img { border-radius:18px; overflow:hidden; box-shadow:var(--shadow); }
-    .map-img img { width:100%; height:320px; object-fit:cover; }
-    .map-link {
-      display:block; text-align:center; margin-top:1rem;
-      background:linear-gradient(135deg,var(--green),#166534); color:#fff;
-      padding:.9rem; border-radius:12px; text-decoration:none;
-      font-weight:700; transition:.25s;
-      box-shadow:0 4px 16px rgba(21,128,61,.4);
+    .prod-card{
+      padding:1.25rem 1rem;
+      border-radius:18px;
+      background:linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      border:1px solid rgba(255,255,255,.12);
+      text-align:center;
+      box-shadow:var(--shadow);
+      transition:.25s ease;
     }
-    .map-link:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(21,128,61,.55); }
+    .prod-card:hover{transform:translateY(-6px)}
+    .pi{font-size:2.1rem;margin-bottom:.5rem}
+    .prod-card h4{font-size:1rem;margin-bottom:.35rem}
+    .prod-card p{font-size:.84rem;color:var(--muted);line-height:1.6}
 
-    /* ══ FOOTER ══ */
-    footer { background:#052e16; color:#a7f3d0; text-align:center; padding:2.8rem 1.5rem; }
-    footer .f-name { font-family:'Tiro Devanagari Hindi',serif; font-size:1.25rem; color:#86efac; margin-bottom:.5rem; }
-    footer p { font-size:.83rem; color:#6ee7b7; margin:.25rem 0; }
-    .f-copy { margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(134,239,172,.2); font-size:.75rem; color:#4ade80; }
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1.02fr .98fr;
+      gap:1.1rem;
+      margin-top:2rem;
+    }
+    .contact-card{
+      padding:1.6rem;
+      border-radius:22px;
+      background:linear-gradient(145deg, rgba(34,197,94,.12), rgba(255,255,255,.06));
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:var(--shadow);
+    }
+    .contact-row{
+      display:flex;
+      gap:.85rem;
+      align-items:flex-start;
+      margin-bottom:1rem;
+      color:var(--muted);
+      line-height:1.7;
+    }
+    .contact-row strong{color:#dcfce7}
+    .contact-row a{color:#86efac;font-weight:700}
+    .map-box{
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+    }
+    .map-box img{height:360px;width:100%;object-fit:cover}
+    .map-link{
+      display:block;
+      text-align:center;
+      padding:1rem;
+      background:linear-gradient(135deg, var(--green), var(--green-dark));
+      color:#fff;
+      font-weight:800;
+    }
 
-    /* ══ WHATSAPP FLOAT ══ */
-    .wa-float {
-      position:fixed; bottom:24px; right:24px; z-index:998;
-      width:64px; height:64px; background:#25d366; border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      font-size:2.1rem; text-decoration:none;
-      box-shadow:0 6px 24px rgba(37,211,102,.6);
-      animation:bounce 2.5s ease-in-out infinite;
+    .banner{
+      text-align:center;
+      padding:3rem 1.1rem;
+      background:linear-gradient(135deg, rgba(34,197,94,.18), rgba(245,158,11,.16));
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      position:relative;
+      overflow:hidden;
     }
-    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    .banner::before{
+      content:"🌾 🌿 🌱 🌾 🌿 🌱 🌾 🌿 🌱 🌾 🌿 🌱";
+      position:absolute;
+      inset:18px auto auto 0;
+      width:200%;
+      white-space:nowrap;
+      opacity:.16;
+      animation:scrollText 18s linear infinite;
+      font-size:1.15rem;
+    }
+    @keyframes scrollText{
+      from{transform:translateX(0)}
+      to{transform:translateX(-50%)}
+    }
 
-    /* ══ RESPONSIVE ══ */
-    @media(max-width:900px){
-      .contact-flex { grid-template-columns:1fr; }
-      .stats-inner { grid-template-columns:repeat(2,1fr); }
-      .gallery-grid { grid-template-columns:1fr 1fr; grid-template-rows:auto; }
-      .g-big { grid-column:1/3; grid-row:auto; height:240px; }
+    footer{
+      text-align:center;
+      padding:2.3rem 1.1rem;
+      color:#c7e8d0;
+      background:rgba(0,0,0,.25);
     }
-    @media(max-width:700px){
-      header { padding:.7rem 1rem; }
-      nav { display:none; flex-direction:column; gap:0; position:absolute; top:100%; left:0; right:0; background:rgba(20,83,45,.98); padding:1rem; }
-      nav.open { display:flex; }
-      nav a { padding:.75rem 0; border-bottom:1px solid rgba(255,255,255,.1); font-size:1rem; }
-      .hamburger { display:flex; }
-      .owner-flex { flex-direction:column; align-items:center; }
-      .owner-img-wrap { width:220px; height:260px; }
-      .gallery-grid { grid-template-columns:1fr; }
-      .g-big { grid-column:1; }
-      .gallery-grid .g-item { height:220px; }
+
+    .wa{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:62px;
+      height:62px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#25d366;
+      color:#fff;
+      font-size:2rem;
+      z-index:999;
+      box-shadow:0 16px 30px rgba(37,211,102,.35);
+      animation:bounce 2.3s ease-in-out infinite;
     }
-    @media(max-width:480px){
-      .hero h1 { font-size:2rem; }
-      .stats-inner { grid-template-columns:repeat(2,1fr); }
+    @keyframes bounce{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-8px)}
+    }
+
+    @media (max-width: 980px){
+      .hero-inner,.contact-grid{grid-template-columns:1fr}
+      .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:auto;
+      }
+      .g-big{grid-column:1/3;height:250px}
+    }
+
+    @media (max-width: 720px){
+      nav{
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        display:none;
+        flex-direction:column;
+        background:rgba(7,22,11,.97);
+        padding:1rem;
+        border-bottom:1px solid var(--line);
+      }
+      nav.open{display:flex}
+      .hamburger{display:flex}
+      .nav-wrap{position:relative}
+      .hero{min-height:auto}
+      .hero-copy{padding:1.35rem}
+      .gallery-grid{grid-template-columns:1fr}
+      .g-big{grid-column:auto;height:240px}
+      .map-box img{height:280px}
+      .hero-btns .btn{width:100%}
+      .hero-btns{flex-direction:column}
+    }
+
+    @media (max-width: 480px){
+      .hero h1{font-size:2.1rem}
+      .hero p{font-size:.98rem}
+      .sec{padding:4rem 1rem}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
     }
   </style>
 </head>
 <body>
 
-<!-- TOP STRIP -->
-<div class="top-strip">
-  🎉 किसानों के लिए बीज, खाद, कीटनाशक उपलब्ध &nbsp;|&nbsp;
-  📞 <a href="tel:9669241098">9669241098</a> &nbsp;|&nbsp;
-  <a href="tel:7999512305">7999512305</a>
-</div>
-
-<!-- NAVBAR -->
-<header>
-  <a class="logo" href="#">
-    <span class="leaf">🌿</span>
-    <span>सेलोकर ट्रेडर्स<br>&amp; कृषि सेवा केंद्र</span>
-  </a>
-  <button class="hamburger" id="ham" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <nav id="navmenu">
-    <a href="#malik">मालिक</a>
-    <a href="#dukan">दुकान</a>
-    <a href="#gallery">गैलरी</a>
-    <a href="#saman">सामग्री</a>
-    <a href="#sampark">संपर्क</a>
-    <a href="tel:9669241098" class="nav-call">📞 कॉल करें</a>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-inner">
-    <div class="hero-badge">✨ कुम्हली का विश्वसनीय नाम ✨</div>
-    <h1><em>सेलोकर ट्रेडर्स</em><br>एवं कृषि सेवा केंद्र</h1>
-    <p class="hero-sub">किराना, जनरल स्टोर से लेकर धान बीज, कीटनाशक और खाद तक —<br>सब कुछ एक ही छत के नीचे, कुम्हली में।</p>
-    <div class="hero-tags">
-      <span class="htag">🛒 किराना सामान</span>
-      <span class="htag">🌾 धान बीज</span>
-      <span class="htag">🧪 कीटनाशक दवाई</span>
-      <span class="htag">🌱 खाद / उर्वरक</span>
-      <span class="htag">🏠 जनरल आइटम्स</span>
-      <span class="htag">✅ किसान मित्र</span>
-    </div>
-    <div class="hero-btns">
-      <a class="btn-sona" href="tel:9669241098">📞 अभी कॉल करें</a>
-      <a class="btn-green" href="https://wa.me/919669241098" target="_blank">💬 WhatsApp</a>
-      <a class="btn-outline" href="#saman">सामग्री देखें →</a>
-    </div>
+  <div class="top-strip">
+    🎉 किसानों के लिए बीज, खाद, कीटनाशक उपलब्ध | 📞 9669241098 | 7999512305
   </div>
-  <div class="scroll-down"><span>↓</span>नीचे देखें</div>
-</section>
 
-<!-- WAVE -->
-<div class="wave" style="background:#f0fdf4; margin-top:-2px;">
-  <svg viewBox="0 0 1440 55" preserveAspectRatio="none" height="55">
-    <path d="M0,28 C360,55 1080,0 1440,28 L1440,0 L0,0 Z" fill="#14532d"/>
-  </svg>
-</div>
+  <header>
+    <div class="nav-wrap">
+      <a href="#home" class="logo">
+        <span class="logo-box">🌿</span>
+        <span>सेलोकर ट्रेडर्स<br>& कृषि सेवा केंद्र</span>
+      </a>
 
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stats-inner">
-    <div class="stat-item"><span class="stat-num">10+</span><div class="stat-label">वर्षों का अनुभव</div></div>
-    <div class="stat-item"><span class="stat-num">500+</span><div class="stat-label">खुश किसान</div></div>
-    <div class="stat-item"><span class="stat-num">2</span><div class="stat-label">दुकानें – एक छत</div></div>
-    <div class="stat-item"><span class="stat-num">100+</span><div class="stat-label">उत्पाद उपलब्ध</div></div>
-  </div>
-</div>
+      <button class="hamburger" id="ham" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
 
-<!-- MALIK -->
-<section class="sec owner-sec" id="malik">
-  <div class="sec-inner">
-    <span class="sec-tag tg-green">👨‍💼 स्वामी / मालिक</span>
-    <div class="owner-flex" style="margin-top:2rem;">
-      <div class="owner-img-wrap">
-        <img src="images/file_000000000f6471f785b773f99333d2c1.png" alt="राहुल सुभाष सेलोकर"/>
+      <nav id="navmenu">
+        <a href="#malik">मालिक</a>
+        <a href="#dukan">दुकान</a>
+        <a href="#gallery">गैलरी</a>
+        <a href="#saman">सामग्री</a>
+        <a href="#sampark">संपर्क</a>
+        <a href="tel:9669241098" class="nav-call">📞 कॉल करें</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="hero-badge">कुम्हली का विश्वसनीय नाम</span>
+        <h1><em>सेलोकर ट्रेडर्स</em><br>एवं कृषि सेवा केंद्र</h1>
+        <p>
+          किराना, जनरल स्टोर, धान बीज, कीटनाशक, खाद और खेती से जुड़ी जरूरी सामग्री —
+          सब कुछ एक ही जगह, भरोसे के साथ।
+        </p>
+
+        <div class="hero-tags">
+          <span class="tag">🛒 किराना सामान</span>
+          <span class="tag">🌾 धान बीज</span>
+          <span class="tag">🧪 कीटनाशक</span>
+          <span class="tag">🌱 खाद / उर्वरक</span>
+          <span class="tag">🏠 जनरल आइटम्स</span>
+          <span class="tag">✅ किसान मित्र</span>
+        </div>
+
+        <div class="hero-btns">
+          <a class="btn btn-gold" href="tel:9669241098">📞 अभी कॉल करें</a>
+          <a class="btn btn-green" href="https://wa.me/919669241098" target="_blank">💬 WhatsApp</a>
+          <a class="btn btn-outline" href="#saman">सामग्री देखें</a>
+        </div>
       </div>
-      <div class="owner-text">
-        <h2>राहुल सुभाष सेलोकर</h2>
-        <p class="post">🏪 स्वामी – सेलोकर ट्रेडर्स एवं सेलोकर कृषि सेवा केंद्र</p>
-        <p>हम वर्षों से कुम्हली एवं आसपास के किसानों और परिवारों की सेवा करते आ रहे हैं। हमारा उद्देश्य है कि आपको घर का राशन हो या खेत का बीज — सब कुछ सही दाम पर और एक ही जगह मिले।</p>
-        <div class="owner-quote">
-          ग्राहकों का विश्वास ही हमारी सबसे बड़ी पूंजी है।<br>किसान की खुशहाली में ही हमारी खुशहाली है।
+
+      <div class="hero-side">
+        <div class="hero-side-card">
+          <h3>🌾 किसान सुविधा</h3>
+          <p>बीज, खाद, स्प्रे और फसल सुरक्षा की सलाह एक ही जगह उपलब्ध है।</p>
+        </div>
+        <div class="hero-side-card">
+          <h3>🛒 घरेलू सामान</h3>
+          <p>रोज़मर्रा की जरूरतों का पूरा सामान, सही दाम और भरोसे के साथ।</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- DONO DUKAN -->
-<section class="sec shops-sec" id="dukan">
-  <div class="sec-inner">
-    <div class="sec-center">
-      <span class="sec-tag tg-green">🏪 हमारी दुकानें</span>
-      <h2 class="sec-title">दो दुकान – एक परिवार</h2>
-      <p class="sec-desc">सेलोकर परिवार दशकों से कुम्हली के लोगों का विश्वस्त नाम रहा है।</p>
-    </div>
-    <div class="shops-grid">
-      <div class="shop-card sh-green">
-        <div class="shop-head">
-          <div class="shop-icon">🛒</div>
-          <div><h3>सेलोकर ट्रेडर्स</h3><p>किराना एवं जनरल स्टोर · कुम्हली</p></div>
+  <section class="sec" id="malik">
+    <div class="inner">
+      <div class="center">
+        <span class="sec-tag tg-green">👨‍💼 स्वामी</span>
+        <h2 class="sec-title">राहुल सुभाष सेलोकर</h2>
+        <p class="sec-desc">हमारा उद्देश्य है कि घर और खेत, दोनों की जरूरतें एक ही छत के नीचे पूरी हों।</p>
+      </div>
+
+      <div class="glass-grid">
+        <div class="glass-card">
+          <h3>परिचय</h3>
+          <p>वर्षों से कुम्हली और आसपास के किसानों व परिवारों की सेवा करते आ रहे हैं। भरोसा, सही दाम और समय पर उपलब्धता हमारी पहचान है।</p>
         </div>
-        <div class="shop-body">
-          <ul class="ul-items">
-            <li>चावल, आटा, दाल, चीनी, तेल, मैदा, बेसन</li>
-            <li>नमक, मसाले, हल्दी, मिर्च, धनिया, जीरा</li>
-            <li>साबुन, शैम्पू, डिटर्जेंट, नहाने का सामान</li>
-            <li>बिस्कुट, चिप्स, नमकीन, कोल्ड ड्रिंक, जूस</li>
-            <li>अगरबत्ती, दीये, माचिस, मोमबत्ती, पूजा सामान</li>
-            <li>बर्तन, प्लास्टिक, स्टील – गृहस्थी सामान</li>
-            <li>स्टेशनरी – कॉपी, पेन, पेंसिल, रजिस्टर</li>
-            <li>सभी जनरल आइटम्स उपलब्ध</li>
+        <div class="glass-card">
+          <h3>सोच</h3>
+          <p>"ग्राहकों का विश्वास ही हमारी सबसे बड़ी पूंजी है। किसान की खुशहाली में ही हमारी खुशहाली है।"</p>
+        </div>
+        <div class="glass-card">
+          <h3>सेवा</h3>
+          <p>घर की राशन से लेकर खेत की सामग्री तक, हम एक complete solution देने की कोशिश करते हैं।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="dukan">
+    <div class="inner">
+      <div class="center">
+        <span class="sec-tag tg-green">🏪 हमारी दुकानें</span>
+        <h2 class="sec-title">दो दुकान – एक परिवार</h2>
+        <p class="sec-desc">सेलोकर परिवार दशकों से कुम्हली में भरोसे के साथ सेवा दे रहा है।</p>
+      </div>
+
+      <div class="glass-grid">
+        <div class="glass-card">
+          <h3>🛒 सेलोकर ट्रेडर्स</h3>
+          <ul class="list">
+            <li>चावल, आटा, दाल, चीनी, तेल</li>
+            <li>नमक, मसाले, हल्दी, मिर्च, धनिया</li>
+            <li>साबुन, शैम्पू, डिटर्जेंट</li>
+            <li>नमकीन, बिस्कुट, जूस, कोल्ड ड्रिंक</li>
+            <li>स्टेशनरी, पूजा सामान, बर्तन</li>
           </ul>
         </div>
-      </div>
-      <div class="shop-card sh-mitti">
-        <div class="shop-head">
-          <div class="shop-icon">🌾</div>
-          <div><h3>सेलोकर कृषि सेवा केंद्र</h3><p>कीटनाशक · बीज · उर्वरक · कुम्हली</p></div>
-        </div>
-        <div class="shop-body">
-          <ul class="ul-items">
-            <li>धान बीज – हाइब्रिड एवं देशी (MTU 1010, IR 64, स्वर्णा)</li>
-            <li>गेहूँ, सोयाबीन, मक्का, अरहर, मूँग बीज</li>
-            <li>कीटनाशक दवाई – कीट नाशक, फफूंदनाशक</li>
-            <li>खरपतवार नाशक (Herbicide)</li>
-            <li>DAP, यूरिया, NPK उर्वरक 50Kg</li>
-            <li>जैविक खाद – वर्मीकम्पोस्ट, नीम खली</li>
-            <li>सूक्ष्म पोषक तत्व (Micronutrients)</li>
-            <li>फसल सुरक्षा सलाह – बिल्कुल मुफ्त</li>
+
+        <div class="glass-card">
+          <h3>🌾 कृषि सेवा केंद्र</h3>
+          <ul class="list">
+            <li>धान बीज, गेहूँ, मक्का, सोयाबीन</li>
+            <li>कीटनाशक, फफूंदनाशक, खरपतवार नाशक</li>
+            <li>DAP, यूरिया, NPK, जैविक खाद</li>
+            <li>Micronutrients और crop support</li>
+            <li>फसल सुरक्षा सलाह उपलब्ध</li>
           </ul>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- GALLERY -->
-<section class="gallery-sec" id="gallery">
-  <div class="gallery-inner">
-    <span class="sec-tag">📸 हमारी गैलरी</span>
-    <h2 class="sec-title">दुकान की झलकियाँ</h2>
-    <p class="sec-desc">हमारी दुकान और सामान की असली तस्वीरें — क्लिक करके बड़ा देखें</p>
-    <div class="gallery-grid">
-      <div class="g-item g-big" onclick="openLB('images/Snapchat-1556347018.jpg','🏪 सेलोकर ट्रेडर्स – हमारी दुकान')">
-        <img src="images/Snapchat-1556347018.jpg" alt="सेलोकर ट्रेडर्स दुकान"/>
-        <div class="g-label">🏪 हमारी दुकान – कुम्हली</div>
+  <section class="sec gallery" id="gallery">
+    <div class="inner">
+      <div class="center">
+        <span class="sec-tag tg-gold">📸 गैलरी</span>
+        <h2 class="sec-title">दुकान की असली झलक</h2>
+        <p class="sec-desc">यह section आपकी site को real business website जैसा feel देता है।</p>
       </div>
-      <div class="g-item" onclick="openLB('images/IMG_20260612_234553.jpg','🏗️ दुकान की बिल्डिंग')">
-        <img src="images/IMG_20260612_234553.jpg" alt="दुकान की बिल्डिंग"/>
-        <div class="g-label">🏗️ दुकान की बिल्डिंग</div>
-      </div>
-      <div class="g-item" onclick="openLB('images/IMG_20260612_234502.jpg','🌾 कृषि सेवा केंद्र')">
-        <img src="images/IMG_20260612_234502.jpg" alt="कृषि सेवा केंद्र"/>
-        <div class="g-label">🌾 कृषि सेवा केंद्र</div>
-      </div>
-      <div class="g-item" onclick="openLB('images/IMG_20200101_165505.jpg','🛒 किराना एवं जनरल स्टोर')">
-        <img src="images/IMG_20200101_165505.jpg" alt="किराना स्टोर"/>
-        <div class="g-label">🛒 किराना एवं जनरल स्टोर</div>
-      </div>
-      <div class="g-item" onclick="openLB('images/IMG-20220604-WA0028.jpg','🧪 कृषि सामान')">
-        <img src="images/IMG-20220604-WA0028.jpg" alt="कृषि सामान"/>
-        <div class="g-label">🧪 कृषि सामान</div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLB()">
-  <button class="lb-close" onclick="closeLB()">✕</button>
-  <img id="lb-img" src="" alt=""/>
-  <div class="lb-caption" id="lb-cap"></div>
-</div>
-
-<!-- PRODUCTS -->
-<section class="sec products-sec" id="saman">
-  <div class="sec-inner">
-    <div class="sec-center" style="margin-bottom:1rem;">
-      <span class="sec-tag tg-green">🧺 उत्पाद सूची</span>
-      <h2 class="sec-title">जो चाहिए, वो यहाँ है</h2>
-      <p class="sec-desc">किराना से लेकर कृषि तक हर चीज़ की भरपूर उपलब्धता</p>
-    </div>
-    <h3 style="font-family:'Tiro Devanagari Hindi',serif;color:var(--green-dark);margin:2rem 0 1rem;font-size:1.35rem;">🌱 कृषि सेवा केंद्र – उत्पाद</h3>
-    <div class="prod-grid">
-      <div class="prod-card"><div class="pi">🌾</div><h4>धान बीज</h4><p>MTU 1010, IR 64, स्वर्णा Sub-1, ललाट, पूजा</p><span class="pbadge pb-g">बीज उपलब्ध</span></div>
-      <div class="prod-card"><div class="pi">🌽</div><h4>अन्य बीज</h4><p>गेहूँ, सोयाबीन, मक्का, अरहर, मूँग, लोबिया</p><span class="pbadge pb-g">सब मौजूद</span></div>
-      <div class="prod-card"><div class="pi">🧪</div><h4>कीटनाशक दवाई</h4><p>Chlorpyrifos, Imidacloprid, Cypermethrin</p><span class="pbadge pb-s">फसल सुरक्षा</span></div>
-      <div class="prod-card"><div class="pi">🌿</div><h4>खरपतवार नाशक</h4><p>Bispyribac Sodium, Pretilachlor, 2,4-D</p><span class="pbadge pb-s">Herbicide</span></div>
-      <div class="prod-card"><div class="pi">🍄</div><h4>फफूंदनाशक</h4><p>Tricyclazole, Hexaconazole, Carbendazim</p><span class="pbadge pb-s">रोग नाशक</span></div>
-      <div class="prod-card"><div class="pi">💊</div><h4>DAP / यूरिया</h4><p>DAP 50Kg, यूरिया, SSP, MOP खाद</p><span class="pbadge pb-g">रासायनिक खाद</span></div>
-      <div class="prod-card"><div class="pi">🌱</div><h4>NPK उर्वरक</h4><p>10-26-26, 12-32-16 – जड़ को शक्ति</p><span class="pbadge pb-g">पूर्ण पोषण</span></div>
-      <div class="prod-card"><div class="pi">♻️</div><h4>जैविक खाद</h4><p>वर्मीकम्पोस्ट, जीवामृत, नीम खली</p><span class="pbadge pb-g">Organic</span></div>
-    </div>
-    <h3 style="font-family:'Tiro Devanagari Hindi',serif;color:var(--mitti);margin:3rem 0 1rem;font-size:1.35rem;">🛒 किराना एवं जनरल स्टोर – उत्पाद</h3>
-    <div class="prod-grid">
-      <div class="prod-card"><div class="pi">🍚</div><h4>अनाज और दालें</h4><p>चावल, आटा, मैदा, बेसन, चना, मूँग, उरद दाल</p><span class="pbadge pb-g">रोज़ की ज़रूरत</span></div>
-      <div class="prod-card"><div class="pi">🧴</div><h4>तेल और मसाले</h4><p>सोयाबीन तेल, सरसों तेल, हल्दी, मिर्च, जीरा</p><span class="pbadge pb-g">घर का स्वाद</span></div>
-      <div class="prod-card"><div class="pi">🧼</div><h4>साबुन और शैम्पू</h4><p>Lux, Lifebuoy, Clinic Plus, Dettol, Neem</p><span class="pbadge pb-g">सफाई सामान</span></div>
-      <div class="prod-card"><div class="pi">🍪</div><h4>नमकीन और बिस्कुट</h4><p>Parle-G, Marie, Bourbon, Lays, Haldiram</p><span class="pbadge pb-g">नाश्ता</span></div>
-      <div class="prod-card"><div class="pi">🥤</div><h4>कोल्ड ड्रिंक और जूस</h4><p>Pepsi, Sprite, Maaza, Frooti, Real Juice</p><span class="pbadge pb-g">ठंडी तरावट</span></div>
-      <div class="prod-card"><div class="pi">📚</div><h4>स्टेशनरी</h4><p>कॉपी, पेन, पेंसिल, इरेज़र, स्केल, रजिस्टर</p><span class="pbadge pb-s">पढ़ाई सामान</span></div>
-      <div class="prod-card"><div class="pi">🏠</div><h4>बर्तन और गृहस्थी</h4><p>स्टील, प्लास्टिक, टिफिन, बाल्टी, गिलास</p><span class="pbadge pb-s">गृहस्थी</span></div>
-      <div class="prod-card"><div class="pi">🪔</div><h4>पूजा सामान</h4><p>अगरबत्ती, दीये, माचिस, मोमबत्ती, कुमकुम</p><span class="pbadge pb-s">धार्मिक</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- BANNER -->
-<div class="banner">
-  <p>🌾 <em>"खेत से घर तक – सेलोकर परिवार आपके साथ"</em> 🌾</p>
-</div>
-
-<!-- TRUST -->
-<section class="sec trust-sec">
-  <div class="sec-inner sec-center">
-    <span class="sec-tag tg-gold">💛 हमें क्यों चुनें?</span>
-    <h2 class="sec-title">भरोसा – पहले, आखिर में, हमेशा</h2>
-    <div class="trust-grid">
-      <div class="trust-card"><div class="ti">🤝</div><h4>विश्वसनीय व्यापारी</h4><p>परिवार का एक विश्वस्त नाम जो सालों से सेवा देता आ रहा है</p></div>
-      <div class="trust-card"><div class="ti">💰</div><h4>सही दाम</h4><p>कोई छुपा हुआ चार्ज नहीं – सीधा और न्यायसंगत कीमत</p></div>
-      <div class="trust-card"><div class="ti">🌾</div><h4>किसान मित्र</h4><p>फसल की बेहतर उपज के लिए मुफ्त सलाह और मार्गदर्शन</p></div>
-      <div class="trust-card"><div class="ti">📦</div><h4>पूरी उपलब्धता</h4><p>घर से लेकर खेत तक की हर ज़रूरत एक जगह पर</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="sec contact-sec" id="sampark">
-  <div class="sec-inner">
-    <div class="sec-center" style="margin-bottom:3rem;">
-      <span class="sec-tag tg-green">📍 संपर्क करें</span>
-      <h2 class="sec-title">हम यहाँ हैं – आइए मिलिए!</h2>
-    </div>
-    <div class="contact-flex">
-      <div class="contact-card">
-        <h3>📞 संपर्क जानकारी</h3>
-        <div class="crow"><span class="ci">🏪</span><p><strong style="color:#86efac;">सेलोकर ट्रेडर्स</strong><br>किराना एवं जनरल आइटम्स</p></div>
-        <div class="crow"><span class="ci">🌾</span><p><strong style="color:#86efac;">सेलोकर कृषि सेवा केंद्र</strong><br>कीटनाशक · बीज · उर्वरक</p></div>
-        <hr class="c-divider"/>
-        <div class="crow"><span class="ci">👤</span><p>स्वामी: <strong style="color:#d1fae5;">राहुल सुभाष सेलोकर</strong></p></div>
-        <div class="crow"><span class="ci">📞</span><p><a href="tel:9669241098">📱 9669241098</a><br><a href="tel:7999512305">📱 7999512305</a></p></div>
-        <div class="crow"><span class="ci">📍</span><p>AT+POST – कुम्हली,<br>तहसील – खैरलांजी,<br>जिला – बालाघाट (481337)<br>मध्यप्रदेश</p></div>
-        <hr class="c-divider"/>
-        <div class="crow"><span class="ci">💬</span><p><a href="https://wa.me/919669241098" target="_blank">WhatsApp पर संपर्क करें</a></p></div>
-        <div class="crow"><span class="ci">🌐</span><p><a href="https://selokartrader.online">selokartrader.online</a></p></div>
-      </div>
-      <div>
-        <div class="map-img">
-          <img src="images/IMG_20260612_234553.jpg" alt="दुकान की तस्वीर"/>
+      <div class="gallery-grid">
+        <div class="g-item g-big">
+          <img src="images/shop-front.jpg" alt="दुकान का front view">
+          <div class="g-label">🏪 हमारी दुकान – कुम्हली</div>
         </div>
-        <a class="map-link" href="https://maps.app.goo.gl/M3JvaD8cKafju23W6" target="_blank">📍 Google Map पर दुकान देखें</a>
-        <div style="margin-top:1rem;display:flex;gap:.8rem;flex-wrap:wrap;">
-          <a class="btn-sona" href="tel:9669241098" style="flex:1;text-align:center;padding:.85rem 1rem;">📞 9669241098</a>
-          <a class="btn-green" href="tel:7999512305" style="flex:1;text-align:center;padding:.85rem 1rem;">📞 7999512305</a>
+        <div class="g-item">
+          <img src="images/products-inside.jpg" alt="दुकान के अंदर सामान">
+          <div class="g-label">🛒 सामान की उपलब्धता</div>
+        </div>
+        <div class="g-item">
+          <img src="images/shop-inside.jpg" alt="किराना स्टोर">
+          <div class="g-label">🏠 किराना स्टोर</div>
+        </div>
+        <div class="g-item">
+          <img src="images/khet-fasal.jpg" alt="किसान की फसल">
+          <div class="g-label">🌱 किसान की फसल</div>
+        </div>
+        <div class="g-item">
+          <img src="images/krishi-saman.jpg" alt="कृषि सामान">
+          <div class="g-label">🌾 कृषि सेवा केंद्र</div>
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="sec" id="saman">
+    <div class="inner">
+      <div class="center">
+        <span class="sec-tag tg-green">🧺 उत्पाद सूची</span>
+        <h2 class="sec-title">जो चाहिए, वो यहाँ है</h2>
+        <p class="sec-desc">किराना से लेकर कृषि तक, जरूरी सामान की पूरी range.</p>
+      </div>
+
+      <div class="prod-grid">
+        <div class="prod-card">
+          <div class="pi">🌾</div>
+          <h4>धान बीज</h4>
+          <p>हाइब्रिड और देशी किस्में</p>
+        </div>
+        <div class="prod-card">
+          <div class="pi">🌽</div>
+          <h4>अन्य बीज</h4>
+          <p>गेहूँ, सोयाबीन, मक्का, अरहर, मूँग</p>
+        </div>
+        <div class="prod-card">
+          <div class="pi">🧪</div>
+          <h4>कीटनाशक</h4>
+          <p>फसल सुरक्षा के लिए</p>
+        </div>
+        <div class="prod-card">
+          <div class="pi">🌿</div>
+          <h4>खरपतवार नाशक</h4>
+          <p>Weed control solutions</p>
+        </div>
+        <div class="prod-card">
+          <div class="pi">🍄</div>
+          <h4>फफूंदनाशक</h4>
+          <p>रोग नियंत्रण के लिए</p>
+        </div>
+        <div class="prod-card">
+          <div class="pi">💊</div>
+          <h4>DAP / यूरिया</h4>
+          <p>ज़रूरी खाद उपलब्ध</p>
+        </div>
+        <div class="prod-card">
+          <div class="pi">♻️</div>
+          <h4>जैविक खाद</h4>
+          <p>वर्मीकम्पोस्ट, नीम खली</p>
+        </div>
+        <div class="prod-card">
+          <div class="pi">🛒</div>
+          <h4>किराना</h4>
+          <p>रोज़मर्रा का सामान</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="banner">
+    <div class="inner">
+      <h2 class="sec-title" style="margin-bottom:.3rem">खेत से घर तक – सेलोकर परिवार आपके साथ</h2>
+      <p class="sec-desc">एक ऐसी website feel, जो खुलते ही live business presence दिखाए।</p>
+    </div>
   </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <p class="f-name">🌿 सेलोकर ट्रेडर्स एवं सेलोकर कृषि सेवा केंद्र 🌿</p>
-  <p>स्वामी: राहुल सुभाष सेलोकर</p>
-  <p>📞 9669241098 &nbsp;|&nbsp; 7999512305</p>
-  <p>📍 AT+POST कुम्हली, तह. खैरलांजी, जिला. बालाघाट – 481337 (म.प्र.)</p>
-  <div class="f-copy">&copy; 2026 सेलोकर ट्रेडर्स एवं कृषि सेवा केंद्र · selokartrader.online · सभी अधिकार सुरक्षित</div>
-</footer>
+  <section class="sec" id="sampark">
+    <div class="inner">
+      <div class="center">
+        <span class="sec-tag tg-gold">📍 संपर्क</span>
+        <h2 class="sec-title">हमसे जुड़ें</h2>
+      </div>
 
-<!-- WHATSAPP FLOAT -->
-<a class="wa-float" href="https://wa.me/919669241098" target="_blank" title="WhatsApp पर संपर्क करें">💬</a>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-row"><span>🏪</span><div><strong>सेलोकर ट्रेडर्स</strong><br>किराना एवं जनरल आइटम्स</div></div>
+          <div class="contact-row"><span>🌾</span><div><strong>सेलोकर कृषि सेवा केंद्र</strong><br>कीटनाशक · बीज · उर्वरक</div></div>
+          <div class="contact-row"><span>👤</span><div>स्वामी: <strong>राहुल सुभाष सेलोकर</strong></div></div>
+          <div class="contact-row"><span>📞</span><div><a href="tel:9669241098">9669241098</a><br><a href="tel:7999512305">7999512305</a></div></div>
+          <div class="contact-row"><span>📍</span><div>AT+POST कुम्हली, तह. खैरलांजी, जिला बालाघाट, म.प्र.</div></div>
+          <div class="contact-row"><span>💬</span><div><a href="https://wa.me/919669241098" target="_blank">WhatsApp पर संपर्क करें</a></div></div>
+        </div>
 
-<script>
-  // Hamburger
-  const ham = document.getElementById('ham');
-  const navmenu = document.getElementById('navmenu');
-  ham.addEventListener('click', () => navmenu.classList.toggle('open'));
-  navmenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navmenu.classList.remove('open')));
+        <div class="map-box">
+          <img src="images/shop-side.jpg" alt="दुकान की side view">
+          <a class="map-link" href="https://maps.app.goo.gl/M3JvaD8cKafju23W6" target="_blank">📍 Google Map पर दुकान देखें</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  // Lightbox
-  function openLB(src, caption) {
-    document.getElementById('lb-img').src = src;
-    document.getElementById('lb-cap').textContent = caption;
-    document.getElementById('lightbox').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLB() {
-    document.getElementById('lightbox').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  document.addEventListener('keydown', e => { if(e.key==='Escape') closeLB(); });
+  <footer>
+    <p style="font-family:'Tiro Devanagari Hindi',serif;font-size:1.15rem;color:#dcfce7;">🌿 सेलोकर ट्रेडर्स एवं सेलोकर कृषि सेवा केंद्र 🌿</p>
+    <p>स्वामी: राहुल सुभाष सेलोकर</p>
+    <p>📞 9669241098 | 7999512305</p>
+    <p>📍 AT+POST कुम्हली, तह. खैरलांजी, जिला बालाघाट – 481337 (म.प्र.)</p>
+  </footer>
 
-  // Nav highlight on scroll
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('nav a[href^="#"]');
-  window.addEventListener('scroll', () => {
-    let cur = '';
-    sections.forEach(s => { if(window.scrollY >= s.offsetTop - 120) cur = s.id; });
-    navLinks.forEach(a => { a.style.color = a.getAttribute('href')==='#'+cur ? '#fef9c3' : ''; });
-  });
+  <a class="wa" href="https://wa.me/919669241098" target="_blank" title="WhatsApp">💬</a>
 
-  // Scroll-in animation
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if(e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.shop-card, .prod-card, .trust-card, .g-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity .5s ease, transform .5s ease';
-    observer.observe(el);
-  });
-</script>
+  <script>
+    const ham = document.getElementById('ham');
+    const nav = document.getElementById('navmenu');
+    ham.addEventListener('click', () => nav.classList.toggle('open'));
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+  </script>
 </body>
 </html>
